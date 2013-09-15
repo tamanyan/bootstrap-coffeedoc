@@ -164,6 +164,21 @@ class GithubWikiRenderer extends Renderer
             outfile = path.join(outputdir, module.wikiname + this.extension)
             fs.writeFile(outfile, this.renderModule(module))
 
+class BootstrapRenderer extends HtmlRenderer
+
+    indexTemplate: fs.readFileSync(__dirname + '/../resources/bootstrap-html/index.eco', 'utf-8')
+    moduleTemplate: fs.readFileSync(__dirname + '/../resources/bootstrap-html/module.eco', 'utf-8')
+    baseCss: fs.readFileSync(__dirname + '/../resources/bootstrap-html/base.css', 'utf-8')
+    bootstrapCss: fs.readFileSync(__dirname + '/../resources/bootstrap-html/bootstrap.css', 'utf-8')
+    extension: '.html'
+
+    write: (modules, outputdir) =>
+        super(modules, outputdir)
+
+        # Write bootstrap css resources.
+        resourcesdir = path.join(outputdir, 'resources')
+        fs.mkdir resourcesdir, '755', =>
+            fs.writeFile(path.join(resourcesdir, 'bootstrap.css'), this.bootstrapCss)
 
 class JSONRenderer extends Renderer
 
@@ -174,5 +189,6 @@ class JSONRenderer extends Renderer
 
 
 exports.html = HtmlRenderer
+exports.bootstrap = BootstrapRenderer
 exports.gfm  = GithubWikiRenderer
 exports.json = JSONRenderer
