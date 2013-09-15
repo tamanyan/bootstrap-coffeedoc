@@ -69,16 +69,17 @@ You can also install from source using cake. From the source directory, run:
 
 CoffeeDoc can be run from the command line:
 
-    Usage: coffeedoc [options] [targets]
 
-    Options:
-      --output, -o    Set output directory                                   [default: "docs"]
-      --parser        Parser to use. Available parsers: commonjs, requirejs  [default: "commonjs"]
-      --renderer      Renderer to use. Available renderers: html, gfm, json  [default: "html"]
-      --stdout        Direct all output to stdout instead of files           [boolean]
-      --ignore, -i    Files or directories to ignore                       
-      --help, -h      Show this help                                       
-      --hide-private  Do not document methods beginning with an underscore   [boolean]
+Usage: coffeedoc [options] [targets]
+
+  Options:
+    --output        Set output directory                                              [default: "docs"]
+    --parser        Parser to use. Available parsers: commonjs, requirejs             [default: "commonjs"]
+    --renderer      Renderer to use. Available renderers: html, bootstrap, gfm, json  [default: "html"]
+    --stdout        Direct all output to stdout instead of files                    
+    --ignore        Files or directories to ignore                                  
+    --help          Show this help                                                  
+    --hide-private  Do not document methods beginning with an underscore  
 
 If [targets] is a directory, CoffeeDoc will recursively document all `.coffee`
 files found under that directory.
