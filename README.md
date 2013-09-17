@@ -1,7 +1,7 @@
 CoffeeDoc
 =========
 
-An API documentation generator for CoffeeScript
+An API documentation generator for CoffeeScript with Bootstrap
 -----------------------------------------------
 
 CoffeeDoc is a simple API documentation generator for [CoffeeScript][]. It reads
