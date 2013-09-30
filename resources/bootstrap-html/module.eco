@@ -11,12 +11,19 @@
   <link rel="stylesheet" media="all" href="<%= @module.resourcepath %>/bootstrap.css" />
 </head>
 <body>
-  <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="#" class="navbar-brand"><%= @module.basename %></a>
-        </div>
+  <div class="navbar navbar-default navbar-fixed-top" style="height:60px;">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="<%= @module.indexPath %>" class="navbar-brand">top</a>
       </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#"><%= @module.basename %></a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
   <div style="margin-top:80px" class="container">
     <div class="row">

@@ -108,6 +108,11 @@ class HtmlRenderer extends Renderer
         for module in modules
             docpath = outputdir
             dirs = path.dirname(path.normalize(module.path)).split('/')
+            length = dirs.length
+            indexPath = "index.html"
+            if length > 0 and dirs[0] != "."
+              indexPath = "../" + indexPath for i in [0...length]
+            module.indexPath = indexPath
             for dir in dirs
                 docpath = path.join(docpath, dir)
                 if not path.existsSync(docpath)
